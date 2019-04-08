@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="BME.PLAYGROUND" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ID"/>
+				</Key>
+				<Property Name="ID" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Mengeneinheit" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Value" Type="Edm.Decimal" Nullable="false" Precision="19" Scale="4" sap:unicode="false" sap:label="Wert" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="Property" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="PropertyManagementID"/>
+					<PropertyRef Name="PropertyID"/>
+					<PropertyRef Name="VaNr"/>
+				</Key>
+				<Property Name="PropertyManagementID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Hausverwaltung" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PropertyID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Liegenschaft" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="VaNr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nr. Vert.Auftrag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="HkaChannel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="HKA-Eingang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NdaChannel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="NDA-Eingang" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Straße" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="HouseNo" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Hausnummer" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ZipCode" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="City" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Ort" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="HkandaStatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Date" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Stichtag" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<NavigationProperty Name="MenuEntries" Relationship="BME.PLAYGROUND.MenuToProperty" FromRole="FromRole_MenuToProperty" ToRole="ToRole_MenuToProperty"/>
+			</EntityType>
+			<EntityType Name="Menu" sap:content-version="1">
+				<Key><PropertyRef Name="PropertyManagementID"/><PropertyRef Name="PropertyID"/><PropertyRef Name="VaNr"/><PropertyRef Name="MenuID"/></Key><Property Name="PropertyManagementID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Hausverwaltung"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PropertyID" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Liegenschaft"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="VaNr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Nr. Vert.Auftrag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuID" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Menüpunkt ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuTitle" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Menü Title"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuGroupID" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Gruppen ID"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuGroupTitle" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Gruppen Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuStatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Menüpunkt Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuErrorStatus" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Menü Error Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InfoText" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Info Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Amount" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currency"
+					sap:label="Betrag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="TransaktWährung"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/><Property Name="Relevance" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Relevanz im KP"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuGroupSorter" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="zweistell. Nr."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MenuSorter" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="zweistell. Nr."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="MenuToProperty" sap:content-version="1"><End Type="BME.PLAYGROUND.Property" Multiplicity="*" Role="FromRole_MenuToProperty"/><End Type="BME.PLAYGROUND.Menu" Multiplicity="*" Role="ToRole_MenuToProperty"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_MenuToProperty"><PropertyRef Name="PropertyManagementID"/><PropertyRef Name="PropertyID"/><PropertyRef Name="VaNr"/></Principal>
+					<Dependent Role="ToRole_MenuToProperty"><PropertyRef Name="PropertyManagementID"/><PropertyRef Name="PropertyID"/><PropertyRef Name="VaNr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="BME.PLAYGROUND_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="ValuesSet" EntityType="BME.PLAYGROUND.Values" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="PropertySet" EntityType="BME.PLAYGROUND.Property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="MenuSet" EntityType="BME.PLAYGROUND.Menu" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="MenuToPropertySet" Association="BME.PLAYGROUND.MenuToProperty" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="PropertySet" Role="FromRole_MenuToProperty"/><End EntitySet="MenuSet" Role="ToRole_MenuToProperty"/></AssociationSet>
+			</EntityContainer><atom:link rel="self" href="https://devportal.brunata-muenchen.de/sap/opu/odata/bme/PLAYGROUND/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="https://devportal.brunata-muenchen.de/sap/opu/odata/bme/PLAYGROUND/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

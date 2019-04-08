@@ -1,0 +1,81 @@
+[{
+	"ID": 1,
+	"Unit": "EUR",
+	"Value": 9.85,
+	"__metadata": {
+		"uri": "ValuesSet(9)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 2,
+	"Unit": "EUR",
+	"Value": 416.31,
+	"__metadata": {
+		"uri": "ValuesSet(416)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 3,
+	"Unit": "EUR",
+	"Value": 6671.92,
+	"__metadata": {
+		"uri": "ValuesSet(6671)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 4,
+	"Unit": "EUR",
+	"Value": 2613.6,
+	"__metadata": {
+		"uri": "ValuesSet(2613)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 5,
+	"Unit": "EUR",
+	"Value": 7960.43,
+	"__metadata": {
+		"uri": "ValuesSet(7960)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 6,
+	"Unit": "EUR",
+	"Value": 2584.86,
+	"__metadata": {
+		"uri": "ValuesSet(2584)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 7,
+	"Unit": "EUR",
+	"Value": 5101.49,
+	"__metadata": {
+		"uri": "ValuesSet(5101)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 8,
+	"Unit": "EUR",
+	"Value": 7638.68,
+	"__metadata": {
+		"uri": "ValuesSet(7638)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 9,
+	"Unit": "EUR",
+	"Value": 100.85,
+	"__metadata": {
+		"uri": "ValuesSet(100)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}, {
+	"ID": 10,
+	"Unit": "EUR",
+	"Value": 8688.55,
+	"__metadata": {
+		"uri": "ValuesSet(8688)",
+		"type": "BME.PLAYGROUND.Values"
+	}
+}]

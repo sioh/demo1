@@ -1,0 +1,77 @@
+<mvc:View
+	controllerName="playground.playground.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<html:style>
+		.alignUnit {padding-top: 8px; padding-right: 4px;}
+	</html:style>
+	<Page
+		busy="{pageView>/busy}"
+		busyIndicatorDelay="{pageView>/delay}"
+		title="{i18n>pageTitle}">
+		<Table items="{
+			path: '/ValuesSet'
+		}">
+			<headerToolbar>
+				<Toolbar>
+					<content>
+						<Title text="{i18n>tableTitle}"/>
+						<Button text="{i18n>NewEntry}" press="createNewEntry"/>
+					</content>
+				</Toolbar>
+			</headerToolbar>
+			<columns>
+				<Column>
+					<header>
+						<Label text="{i18n>ctId}"/>
+					</header>
+				</Column>
+				<Column hAlign="End">
+					<header>
+						<Label text="{i18n>ctValue}"/>
+					</header>
+				</Column>
+				<Column>
+					<header>
+						<Label text="{i18n>ctUnit}"/>
+					</header>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{ID}"/>
+						<!--<MaskInput mask="{Unit} {path: 'Value', type: 'sap.ui.model.type.Float'}" placeholderSymbol=" " placeholder="">
+							<rules>
+								<MaskInputRule
+									maskFormatSymbol="*"
+									regex="[\d\s]">
+								</MaskInputRule>
+							</rules>
+						</MaskInput>-->
+						<HBox>
+							<Label class="alignUnit" text="{Unit} "/>
+							<Input textAlign="Right" value="{path: 'Value', type: 'sap.ui.model.type.Float', formatOptions: {maxFractionDigits : 2, minFractionDigits: 2}}"/>
+						</HBox>
+						<Text text="{Unit}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<!--<MultiInput>
+			<tokens>
+				<Token key="{ID}" text="{Unit}"/>
+			</tokens>
+		</MultiInput>-->
+		<!--<MaskInput mask="EUR 9999,99" placeholderSymbol=" " placeholder="">
+			<rules>
+				<MaskInputRule
+					maskFormatSymbol="*"
+					regex="[\d\s]">
+				</MaskInputRule>
+			</rules>
+		</MaskInput>-->
+	</Page>
+</mvc:View>
